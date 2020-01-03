@@ -20,9 +20,23 @@ std::vector<int> Individual::getData() {
     return this->data;
 };
 
-Population::Population(int n) {
-    for (unsigned int i = 0; i < n; i++) {
-        Individual individual(5);
-        this->individuals[i] = individual;
+Population::Population(int nI, int nP) {
+    this->setData(nI, nP);
+};
+
+void Population::setData(int nI, int nP) { 
+    this->data = initializeWithRandomIndividuals(nI, nP);
+};
+
+std::vector<Individual> Population::initializeWithRandomIndividuals(int nI, int nP) { 
+    std::vector<Individual> vec;
+    for (unsigned int i = 0; i < nP; i++) {
+        Individual individual(nI);
+        vec.push_back(individual);
     }
+    return vec;
+};
+
+std::vector<Individual> Population::getData() { 
+    return this->data;
 };

@@ -1,10 +1,16 @@
 #include "environment.h"
 
 int main() {
-  Individual i(5);
-  auto data = i.getData();
+  int individualSize = 6;
+  int popSize = 4;
+  Population pop(individualSize, popSize);
+  std::cout << "population size: " << popSize << endl;
+  std::cout << "individual size: " << individualSize << endl;
 
-  std::cout << "unsorted: ";
-  copy(begin(data), end(data),
-    std::ostream_iterator<int>(std::cout, "\n"));
+  auto data = pop.getData();
+  for (unsigned int i = 0; i < data.size(); i++) {
+    std::vector<int> innerData = data[i].getData();
+    std::cout << "unsorted [" << i << "] data: ";
+    copy(begin(innerData), end(innerData), std::ostream_iterator<int>(std::cout, "\n"));
+  }  
 }

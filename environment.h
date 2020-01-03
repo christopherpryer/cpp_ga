@@ -23,8 +23,12 @@ class Individual {
 class Population {
 
     public:
-        Population(int n); // initialize with n-sized population.
+        Population(int nI, int nP); // initialize with n-sized population using random-individual initialization.
+        std::vector<Individual> getData();
 
     private:
-        Individual individuals[];
+        std::vector<Individual> data;
+
+        void setData(int nI, int nP);
+        std::vector<Individual> initializeWithRandomIndividuals(int nI, int nP);
 };
