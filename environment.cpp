@@ -2,7 +2,7 @@
 
 Individual::Individual(int n) {
     this->setRandomData(n);
-}
+};
 
 void Individual::setRandomData(int n) {
     std::random_device r;
@@ -14,8 +14,15 @@ void Individual::setRandomData(int n) {
 
     generate(begin(v), end(v), bind(dist, eng));
     this->data = v;
-}
+};
 
 std::vector<int> Individual::getData() {
     return this->data;
-}
+};
+
+Population::Population(int n) {
+    for (unsigned int i = 0; i < n; i++) {
+        Individual individual(5);
+        this->individuals[i] = individual;
+    }
+};

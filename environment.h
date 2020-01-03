@@ -19,3 +19,12 @@ class Individual {
         std::vector<int> data;
         void setRandomData(int n);
 };
+
+class Population {
+
+    public:
+        Population(int n); // initialize with n-sized population.
+
+    private:
+        Individual individuals[];
+};
