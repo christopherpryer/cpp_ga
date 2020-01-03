@@ -11,11 +11,10 @@ int main() {
   std::cout << "population size: " << popSize << endl;
   std::cout << "individual size: " << individualSize << endl;
 
-  // display population data [nP]: [nI ...]
-  auto data = pop.getData();
-  for (unsigned int i = 0; i < data.size(); i++) {
-    std::vector<int> innerData = data[i].getData();
-    std::cout << "unsorted [" << i << "] data: ";
-    copy(begin(innerData), end(innerData), std::ostream_iterator<int>(std::cout, "\n"));
-  }
+  // begin optimizaiton.
+  int n = 1000;
+  std::cout << "running " << n << " generations " << endl;
+  pop.run(n);
+
+  std::cout << "completed simulation" << endl;
 }
