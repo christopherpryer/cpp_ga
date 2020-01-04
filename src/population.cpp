@@ -60,15 +60,16 @@ std::vector<int> Population::calculateSumsVector(std::vector<Individual> popData
 std::vector<float> Population::calculateProbabilityVector(std::vector<int> ranksVector) {
     int maximumIndex = *std::max_element(ranksVector.begin(), ranksVector.end());
 
+    long totalScore = 0;
     std::vector<long> scoreVector(ranksVector.size());
     for (unsigned int i = 0; i <= maximumIndex; i++) {
-        scoreVector[i] = pow(ranksVector[i] + 1, this->scorePower);
+        long score = pow(ranksVector[i] + 1, this->scorePower);
+        scoreVector[i] = score;
+        totalScore += score;
     }
-
-    long totalScore = std::accumulate(scoreVector.begin(), scoreVector.end(), 0);
     std::vector<float> probabilityVector(ranksVector.size());
     for (unsigned int i = 0; i <= maximumIndex; i++) { // no simple vectorized scalar math?
-        probabilityVector[i] = (scoreVector[i] + 1) * 1. / totalScore;
+        probabilityVector[i] = (scoreVector[i] + 1) / float(totalScore);
     }
     return probabilityVector;
 };
