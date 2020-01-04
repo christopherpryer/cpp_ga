@@ -1,5 +1,4 @@
 #include "population.h"
-#include "utils.h"
 
 Population::Population(int nI, int nP, std::string kind) {
     this->setData(nI, nP, kind);
@@ -41,9 +40,7 @@ std::vector<int> Population::calculateRanksVector(std::vector<Individual> popDat
     std::vector<int> ranks(sums.size());
     std::size_t n(0);
     std::generate(std::begin(ranks), std::end(ranks), [&]{ return n++; });
-    std::sort(std::begin(ranks), 
-              std::end(ranks),
-              [&](int i1, int i2) { return sums[i1] < sums[i2]; });
+    std::sort(std::begin(ranks), std::end(ranks), [&](int i1, int i2) { return sums[i1] < sums[i2]; });
     return ranks;
 };
 
@@ -54,6 +51,7 @@ std::vector<int> Population::calculateSumsVector(std::vector<Individual> popData
     for (unsigned int i = 0; i < totalPop; i++) {
         std::vector<int> innerData = popData[i].getData();
         int sum = std::accumulate(innerData.begin(), innerData.end(), 0);
+        popData[i].setFitness(sum);
         vec.push_back(sum);
         }
     return vec;

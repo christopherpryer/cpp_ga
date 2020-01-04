@@ -19,3 +19,7 @@ void Individual::setRandomData(int n) {
 std::vector<int> Individual::getData() {
     return this->data;
 };
+
+void Individual::setFitness(long f) {
+    this->fitness = f;
+}
