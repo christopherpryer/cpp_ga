@@ -29,7 +29,7 @@ int main() {
   std::cout << "individual size: " << individualSize << endl;
 
   // begin optimizaiton.
-  int n = 1000;
+  int n = 1;
   std::cout << "running " << n << " generations " << endl;
   pop.run(n);
 

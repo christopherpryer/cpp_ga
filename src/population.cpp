@@ -1,4 +1,5 @@
 #include "population.h"
+#include "utils.h"
 
 Population::Population(int nI, int nP, std::string kind) {
     this->setData(nI, nP, kind);
@@ -30,7 +31,7 @@ void Population::run(int n) {
     for (unsigned int i = 0; i < n; i++) { // for n generations.
         // get the rank of each individual as a vector.
         std::vector<int> ranks = this->calculateRanksVector(this->data);
-        // TODO: implement lottery system.
+        std::vector<float> probabilityVector = this->calculateProbabilityVector(ranks);
     }
 };
 
@@ -56,4 +57,21 @@ std::vector<int> Population::calculateSumsVector(std::vector<Individual> popData
         vec.push_back(sum);
         }
     return vec;
+};
+
+std::vector<float> Population::calculateProbabilityVector(std::vector<int> ranksVector) {
+
+    int maximumIndex = *std::max_element(ranksVector.begin(), ranksVector.end());
+
+    std::vector<float> scoreVector(ranksVector.size());
+    for (unsigned int i = 0; i <= maximumIndex; i++) {
+        scoreVector[i] = pow(ranksVector[i] + 1, this->scorePower);
+    }
+
+    float totalScore = std::accumulate(scoreVector.begin(), scoreVector.end(), 0);
+    std::vector<float> probabilityVector(ranksVector.size());
+    for (unsigned int i = 0; i <= maximumIndex; i++) { // no simple vectorized scalar math?
+        probabilityVector[i] = (scoreVector[i] + 1) / totalScore;
+    }
+    return probabilityVector;
 };

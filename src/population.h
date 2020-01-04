@@ -9,11 +9,13 @@ class Population {
         std::vector<Individual> getData();
         void run(int n); // control n runs of a generation
         std::vector<int> calculateSumsVector(std::vector<Individual> popData);
-        std::vector<int> calculateRanksVector(std::vector<Individual> popData); // rank individuals by their sum (highest sum goes first).
+        std::vector<int> calculateRanksVector(std::vector<Individual> popData); // rank individuals by least to most.
 
     private:
         std::vector<Individual> data;
+        int scorePower = 2;
 
         void setData(int nI, int nP, std::string kind);
         std::vector<Individual> initializeWithRandomIndividuals(int nI, int nP);
+        std::vector<float> calculateProbabilityVector(std::vector<int> ranksVector);
 };
