@@ -23,3 +23,7 @@ std::vector<int> Individual::getData() {
 void Individual::setFitness(long f) {
     this->fitness = f;
 }
+
+long Individual::getFitness() {
+    return this->fitness;
+}

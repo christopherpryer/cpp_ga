@@ -31,6 +31,7 @@ void Population::run(int n) {
         // get the rank of each individual as a vector.
         std::vector<int> ranks = this->calculateRanksVector(this->data);
         std::vector<float> probabilityVector = this->calculateProbabilityVector(ranks);
+        std::vector<int> selectedIndicies = this->selectUsingProbability(ranks, probabilityVector);
     }
 };
 
@@ -51,25 +52,41 @@ std::vector<int> Population::calculateSumsVector(std::vector<Individual> popData
     for (unsigned int i = 0; i < totalPop; i++) {
         std::vector<int> innerData = popData[i].getData();
         int sum = std::accumulate(innerData.begin(), innerData.end(), 0);
-        popData[i].setFitness(sum);
+        this->data[i].setFitness(sum);
         vec.push_back(sum);
         }
     return vec;
 };
 
 std::vector<float> Population::calculateProbabilityVector(std::vector<int> ranksVector) {
-    int maximumIndex = *std::max_element(ranksVector.begin(), ranksVector.end());
+    int vecSize = ranksVector.size();
 
     long totalScore = 0;
-    std::vector<long> scoreVector(ranksVector.size());
-    for (unsigned int i = 0; i <= maximumIndex; i++) {
-        long score = pow(ranksVector[i] + 1, this->scorePower);
-        scoreVector[i] = score;
+    std::vector<long> scoreVector;
+    for (unsigned int i = vecSize; i > 0; i--) {
+        long score = pow(i, this->scorePower);
+        scoreVector.push_back(score);
         totalScore += score;
     }
-    std::vector<float> probabilityVector(ranksVector.size());
-    for (unsigned int i = 0; i <= maximumIndex; i++) { // no simple vectorized scalar math?
-        probabilityVector[i] = (scoreVector[i] + 1) / float(totalScore);
+
+    std::vector<float> probabilityVector(vecSize);
+    for (unsigned int i = 0; i < vecSize; i++) { // no simple vectorized scalar math?
+        probabilityVector[ranksVector[i]] = (scoreVector[i] + 1) / float(totalScore);
     }
     return probabilityVector;
+};
+
+
+std::vector<int> Population::selectUsingProbability(std::vector<int> sampleVector, std::vector<float> probabilityVector) {
+    const int outputSize = int(sampleVector.size() * this->reproductionProbability);
+    std::vector<int> vec(outputSize);
+    
+    std::default_random_engine generator;
+    std::discrete_distribution<int> distribution(probabilityVector.begin(), probabilityVector.end());
+
+    std::vector<int> indices(vec.size());
+    std::generate(indices.begin(), indices.end(), [&generator, &distribution]() { return distribution(generator); });
+
+    std::transform(indices.begin(), indices.end(), vec.begin(), [&sampleVector](int index) { return sampleVector[index]; });
+    return indices;
 };

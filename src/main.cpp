@@ -1,13 +1,12 @@
 #include "population.h"
-#include "utils.h"
 #include <time.h>
 
 int main() {
 
   // initialize params.
-  int initIndividualSize = 20;
-  int initPopSize = 100;
-  int generations = 1000000;
+  int initIndividualSize = 3;
+  int initPopSize = 5;
+  int generations = 1;
   Population pop(initIndividualSize, initPopSize, "random");
 
   // initialization tests.

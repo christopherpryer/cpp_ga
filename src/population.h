@@ -14,8 +14,10 @@ class Population {
     private:
         std::vector<Individual> data;
         int scorePower = 2;
+        float reproductionProbability = 0.4;
 
         void setData(int nI, int nP, std::string kind);
         std::vector<Individual> initializeWithRandomIndividuals(int nI, int nP);
         std::vector<float> calculateProbabilityVector(std::vector<int> ranksVector);
+        std::vector<int> selectUsingProbability(std::vector<int> sampleVector, std::vector<float> probabilityVector);
 };

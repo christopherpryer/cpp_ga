@@ -15,6 +15,7 @@ class Individual {
         Individual(int n); // initialize with n-sized random vector.
         std::vector<int> getData();
         void setFitness(long f);
+        long getFitness();
 
     private:
         std::vector<int> data;
