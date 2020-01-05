@@ -2,10 +2,9 @@
 #include <time.h>
 
 int main() {
-
   // initialize params.
-  int initIndividualSize = 3;
-  int initPopSize = 5;
+  int initIndividualSize = 8;
+  int initPopSize = 30;
   int generations = 1;
   Population pop(initIndividualSize, initPopSize, "random");
 
@@ -37,5 +36,6 @@ int main() {
   double secondsSinceStart = difftime(time(0), start);
 
   std::cout << "completed simulation in roughly " << secondsSinceStart << " second(s)" << endl;
+  std::cout << "last pop size: " << pop.getData().size() << endl;
   return 0;
 }

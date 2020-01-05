@@ -1,4 +1,6 @@
 #include "population.h"
+#include <stdio.h>      /* printf, scanf, puts, NULL */
+#include <stdlib.h>     /* srand, rand */
 
 Population::Population(int nI, int nP, std::string kind) {
     this->setData(nI, nP, kind);
@@ -32,6 +34,25 @@ void Population::run(int n) {
         std::vector<int> ranks = this->calculateRanksVector(this->data);
         std::vector<float> probabilityVector = this->calculateProbabilityVector(ranks);
         std::vector<int> selectedIndicies = this->selectUsingProbability(ranks, probabilityVector);
+        std::vector<Individual> newGenerationVector;
+
+        int iN = this->data[0].getData().size(); // size of an individual.
+        int N = this->data.size();
+        int n = selectedIndicies.size();
+        int selectionCounter = 0;
+        for (unsigned int i = 0; i < N; i++) {
+            if (selectionCounter + 1 >= n) {
+                selectionCounter = 0;
+            }
+            int firstIndex = selectedIndicies[selectionCounter];
+            int secondIndex = selectedIndicies[selectionCounter+1];
+            std::vector<int> reproductionVector = getReproductionVector(this->data[firstIndex], this->data[secondIndex]);
+            
+            Individual child(iN);
+            child.overrideData(reproductionVector);
+            newGenerationVector.push_back(child);
+        }
+        this->overrideData(newGenerationVector);
     }
 };
 
@@ -52,7 +73,6 @@ std::vector<int> Population::calculateSumsVector(std::vector<Individual> popData
     for (unsigned int i = 0; i < totalPop; i++) {
         std::vector<int> innerData = popData[i].getData();
         int sum = std::accumulate(innerData.begin(), innerData.end(), 0);
-        this->data[i].setFitness(sum);
         vec.push_back(sum);
         }
     return vec;
@@ -66,6 +86,7 @@ std::vector<float> Population::calculateProbabilityVector(std::vector<int> ranks
     for (unsigned int i = vecSize; i > 0; i--) {
         long score = pow(i, this->scorePower);
         scoreVector.push_back(score);
+        this->data[ranksVector[i]].setFitness(score);
         totalScore += score;
     }
 
@@ -76,11 +97,10 @@ std::vector<float> Population::calculateProbabilityVector(std::vector<int> ranks
     return probabilityVector;
 };
 
-
 std::vector<int> Population::selectUsingProbability(std::vector<int> sampleVector, std::vector<float> probabilityVector) {
     const int outputSize = int(sampleVector.size() * this->reproductionProbability);
     std::vector<int> vec(outputSize);
-    
+
     std::default_random_engine generator;
     std::discrete_distribution<int> distribution(probabilityVector.begin(), probabilityVector.end());
 
@@ -90,3 +110,29 @@ std::vector<int> Population::selectUsingProbability(std::vector<int> sampleVecto
     std::transform(indices.begin(), indices.end(), vec.begin(), [&sampleVector](int index) { return sampleVector[index]; });
     return indices;
 };
+
+std::vector<int> Population::getReproductionVector(Individual i1, Individual i2) {
+    int geneSplitIndex; 
+    std::vector<int> firstData = i1.getData();
+    std::vector<int> secondData = i2.getData();
+    int vecSize = firstData.size();
+
+    srand (time(NULL));
+    geneSplitIndex = rand() % (vecSize - 2) + 1; // ensure at least some data is passed from each parent.
+
+    std::vector<int> vec(vecSize);
+    
+    for (unsigned int i = 0; i <= geneSplitIndex; i++) {
+        vec[i] = firstData[i];
+    }
+
+    for (unsigned int i = geneSplitIndex + 1; i <= vecSize; i++) {
+        vec[i] = secondData[i];
+    }
+
+    return vec;
+}   
+
+void Population::overrideData(std::vector<Individual> newData) {
+    this->data = newData;
+}

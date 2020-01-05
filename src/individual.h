@@ -16,6 +16,7 @@ class Individual {
         std::vector<int> getData();
         void setFitness(long f);
         long getFitness();
+        void overrideData(std::vector<int> newData);
 
     private:
         std::vector<int> data;

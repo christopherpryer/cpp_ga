@@ -20,4 +20,6 @@ class Population {
         std::vector<Individual> initializeWithRandomIndividuals(int nI, int nP);
         std::vector<float> calculateProbabilityVector(std::vector<int> ranksVector);
         std::vector<int> selectUsingProbability(std::vector<int> sampleVector, std::vector<float> probabilityVector);
+        std::vector<int> getReproductionVector(Individual i1, Individual i2);
+        void overrideData(std::vector<Individual> newData);
 };
