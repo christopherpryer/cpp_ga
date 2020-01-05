@@ -51,6 +51,8 @@ void Population::run(int n) {
             Individual child(iN);
             child.overrideData(reproductionVector);
             newGenerationVector.push_back(child);
+
+            // TODO: add mutation.
         }
         this->overrideData(newGenerationVector);
     }

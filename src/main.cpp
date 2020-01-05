@@ -5,7 +5,7 @@ int main() {
   // initialize params.
   int initIndividualSize = 8;
   int initPopSize = 30;
-  int generations = 1;
+  int generations = 100;
   Population pop(initIndividualSize, initPopSize, "random");
 
   // initialization tests.
