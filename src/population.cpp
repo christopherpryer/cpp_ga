@@ -41,17 +41,17 @@ void Population::run(int n) {
         int n = selectedIndicies.size();
         int selectionCounter = 0;
         for (unsigned int i = 0; i < N; i++) {
-            if (selectionCounter + 1 >= n) {
+            if (selectionCounter + 1 == n) {
                 selectionCounter = 0;
             }
             int firstIndex = selectedIndicies[selectionCounter];
-            int secondIndex = selectedIndicies[selectionCounter+1];
-            std::vector<int> reproductionVector = getReproductionVector(this->data[firstIndex], this->data[secondIndex]);
+            int secondIndex = selectedIndicies[selectionCounter + 1];
+            std::vector<int> reproductionVector = this->getReproductionVector(this->data[firstIndex], this->data[secondIndex]);
             
             Individual child(iN);
             child.overrideData(reproductionVector);
             newGenerationVector.push_back(child);
-
+            selectionCounter++;
             // TODO: add mutation.
         }
         this->overrideData(newGenerationVector);
@@ -85,11 +85,13 @@ std::vector<float> Population::calculateProbabilityVector(std::vector<int> ranks
 
     long totalScore = 0;
     std::vector<long> scoreVector;
+    int positionCounter = 0;
     for (unsigned int i = vecSize; i > 0; i--) {
         long score = pow(i, this->scorePower);
         scoreVector.push_back(score);
-        this->data[ranksVector[i]].setFitness(score);
+        this->data[ranksVector[positionCounter]].setFitness(score);
         totalScore += score;
+        positionCounter++;
     }
 
     std::vector<float> probabilityVector(vecSize);
