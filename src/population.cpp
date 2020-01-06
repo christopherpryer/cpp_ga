@@ -121,7 +121,6 @@ std::vector<int> Population::getReproductionVector(Individual i1, Individual i2)
     std::vector<int> secondData = i2.getData();
     int vecSize = firstData.size();
 
-    srand (time(NULL));
     geneSplitIndex = rand() % (vecSize - 2) + 1; // ensure at least some data is passed from each parent.
 
     std::vector<int> vec(vecSize);
@@ -135,7 +134,7 @@ std::vector<int> Population::getReproductionVector(Individual i1, Individual i2)
     }
 
     return vec;
-}   
+}
 
 void Population::overrideData(std::vector<Individual> newData) {
     this->data = newData;
