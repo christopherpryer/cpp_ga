@@ -1,4 +1,4 @@
-# Install script for directory: /cygdrive/c/users/pryerc/dev/cpp_ga/build
+# Install script for directory: /cygdrive/c/users/pryerc/dev/cpp_ga
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

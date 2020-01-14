@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/individual.cpp.o"
-  "CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/main.cpp.o"
-  "CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/population.cpp.o"
-  "test.pdb"
-  "test.exe"
-  "libtest.dll.a"
+  "CMakeFiles/test.dir/src/individual.cpp.o"
+  "CMakeFiles/test.dir/src/main.cpp.o"
+  "CMakeFiles/test.dir/src/population.cpp.o"
+  "../bin/test.pdb"
+  "../bin/test.exe"
+  "../lib/libtest.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

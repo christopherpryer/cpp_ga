@@ -43,7 +43,7 @@ RM = /usr/bin/cmake.exe -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cygdrive/c/users/pryerc/dev/cpp_ga/build
+CMAKE_SOURCE_DIR = /cygdrive/c/users/pryerc/dev/cpp_ga
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /cygdrive/c/users/pryerc/dev/cpp_ga/build
@@ -57,64 +57,64 @@ include CMakeFiles/test.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/test.dir/flags.make
 
-CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/individual.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/individual.cpp.o: /cygdrive/c/users/pryerc/dev/cpp_ga/src/individual.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/users/pryerc/dev/cpp_ga/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/individual.cpp.o"
-	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/individual.cpp.o -c /cygdrive/c/users/pryerc/dev/cpp_ga/src/individual.cpp
+CMakeFiles/test.dir/src/individual.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/individual.cpp.o: ../src/individual.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/users/pryerc/dev/cpp_ga/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test.dir/src/individual.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/individual.cpp.o -c /cygdrive/c/users/pryerc/dev/cpp_ga/src/individual.cpp
 
-CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/individual.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/individual.cpp.i"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/users/pryerc/dev/cpp_ga/src/individual.cpp > CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/individual.cpp.i
+CMakeFiles/test.dir/src/individual.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/individual.cpp.i"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/users/pryerc/dev/cpp_ga/src/individual.cpp > CMakeFiles/test.dir/src/individual.cpp.i
 
-CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/individual.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/individual.cpp.s"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/users/pryerc/dev/cpp_ga/src/individual.cpp -o CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/individual.cpp.s
+CMakeFiles/test.dir/src/individual.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/individual.cpp.s"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/users/pryerc/dev/cpp_ga/src/individual.cpp -o CMakeFiles/test.dir/src/individual.cpp.s
 
-CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/main.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/main.cpp.o: /cygdrive/c/users/pryerc/dev/cpp_ga/src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/users/pryerc/dev/cpp_ga/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/main.cpp.o"
-	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/main.cpp.o -c /cygdrive/c/users/pryerc/dev/cpp_ga/src/main.cpp
+CMakeFiles/test.dir/src/main.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/main.cpp.o: ../src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/users/pryerc/dev/cpp_ga/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/test.dir/src/main.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/main.cpp.o -c /cygdrive/c/users/pryerc/dev/cpp_ga/src/main.cpp
 
-CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/main.cpp.i"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/users/pryerc/dev/cpp_ga/src/main.cpp > CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/main.cpp.i
+CMakeFiles/test.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/main.cpp.i"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/users/pryerc/dev/cpp_ga/src/main.cpp > CMakeFiles/test.dir/src/main.cpp.i
 
-CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/main.cpp.s"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/users/pryerc/dev/cpp_ga/src/main.cpp -o CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/main.cpp.s
+CMakeFiles/test.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/main.cpp.s"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/users/pryerc/dev/cpp_ga/src/main.cpp -o CMakeFiles/test.dir/src/main.cpp.s
 
-CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/population.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/population.cpp.o: /cygdrive/c/users/pryerc/dev/cpp_ga/src/population.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/users/pryerc/dev/cpp_ga/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/population.cpp.o"
-	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/population.cpp.o -c /cygdrive/c/users/pryerc/dev/cpp_ga/src/population.cpp
+CMakeFiles/test.dir/src/population.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/population.cpp.o: ../src/population.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/users/pryerc/dev/cpp_ga/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/test.dir/src/population.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/population.cpp.o -c /cygdrive/c/users/pryerc/dev/cpp_ga/src/population.cpp
 
-CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/population.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/population.cpp.i"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/users/pryerc/dev/cpp_ga/src/population.cpp > CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/population.cpp.i
+CMakeFiles/test.dir/src/population.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/population.cpp.i"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/users/pryerc/dev/cpp_ga/src/population.cpp > CMakeFiles/test.dir/src/population.cpp.i
 
-CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/population.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/population.cpp.s"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/users/pryerc/dev/cpp_ga/src/population.cpp -o CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/population.cpp.s
+CMakeFiles/test.dir/src/population.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/population.cpp.s"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/users/pryerc/dev/cpp_ga/src/population.cpp -o CMakeFiles/test.dir/src/population.cpp.s
 
 # Object files for target test
 test_OBJECTS = \
-"CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/individual.cpp.o" \
-"CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/main.cpp.o" \
-"CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/population.cpp.o"
+"CMakeFiles/test.dir/src/individual.cpp.o" \
+"CMakeFiles/test.dir/src/main.cpp.o" \
+"CMakeFiles/test.dir/src/population.cpp.o"
 
 # External object files for target test
 test_EXTERNAL_OBJECTS =
 
-test.exe: CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/individual.cpp.o
-test.exe: CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/main.cpp.o
-test.exe: CMakeFiles/test.dir/cygdrive/c/users/pryerc/dev/cpp_ga/src/population.cpp.o
-test.exe: CMakeFiles/test.dir/build.make
-test.exe: CMakeFiles/test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cygdrive/c/users/pryerc/dev/cpp_ga/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable test.exe"
+../bin/test.exe: CMakeFiles/test.dir/src/individual.cpp.o
+../bin/test.exe: CMakeFiles/test.dir/src/main.cpp.o
+../bin/test.exe: CMakeFiles/test.dir/src/population.cpp.o
+../bin/test.exe: CMakeFiles/test.dir/build.make
+../bin/test.exe: CMakeFiles/test.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cygdrive/c/users/pryerc/dev/cpp_ga/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ../bin/test.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/test.dir/build: test.exe
+CMakeFiles/test.dir/build: ../bin/test.exe
 
 .PHONY : CMakeFiles/test.dir/build
 
@@ -123,6 +123,6 @@ CMakeFiles/test.dir/clean:
 .PHONY : CMakeFiles/test.dir/clean
 
 CMakeFiles/test.dir/depend:
-	cd /cygdrive/c/users/pryerc/dev/cpp_ga/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /cygdrive/c/users/pryerc/dev/cpp_ga/build /cygdrive/c/users/pryerc/dev/cpp_ga/build /cygdrive/c/users/pryerc/dev/cpp_ga/build /cygdrive/c/users/pryerc/dev/cpp_ga/build /cygdrive/c/users/pryerc/dev/cpp_ga/build/CMakeFiles/test.dir/DependInfo.cmake --color=$(COLOR)
+	cd /cygdrive/c/users/pryerc/dev/cpp_ga/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /cygdrive/c/users/pryerc/dev/cpp_ga /cygdrive/c/users/pryerc/dev/cpp_ga /cygdrive/c/users/pryerc/dev/cpp_ga/build /cygdrive/c/users/pryerc/dev/cpp_ga/build /cygdrive/c/users/pryerc/dev/cpp_ga/build/CMakeFiles/test.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/test.dir/depend
 
