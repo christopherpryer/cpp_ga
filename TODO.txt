@@ -1,0 +1,8 @@
+- add csv configuration for individuals
+- add mutation function
+- refactor for individual-based simulation
+- refactor for more abstraction
+- make debugging improvements
+- add tests
+- profile
+- refactor for c++ coding style
