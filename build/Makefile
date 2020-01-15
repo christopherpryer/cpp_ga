@@ -48,7 +48,7 @@ RM = /usr/bin/cmake.exe -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cygdrive/c/users/pryerc/dev/cpp_ga
+CMAKE_SOURCE_DIR = /cygdrive/c/users/pryerc/dev/cpp_ga/src
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /cygdrive/c/users/pryerc/dev/cpp_ga/build
@@ -123,86 +123,86 @@ test/fast:
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
 .PHONY : test/fast
 
-src/individual.o: src/individual.cpp.o
+individual.o: individual.cpp.o
 
-.PHONY : src/individual.o
-
-# target to build an object file
-src/individual.cpp.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/individual.cpp.o
-.PHONY : src/individual.cpp.o
-
-src/individual.i: src/individual.cpp.i
-
-.PHONY : src/individual.i
-
-# target to preprocess a source file
-src/individual.cpp.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/individual.cpp.i
-.PHONY : src/individual.cpp.i
-
-src/individual.s: src/individual.cpp.s
-
-.PHONY : src/individual.s
-
-# target to generate assembly for a file
-src/individual.cpp.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/individual.cpp.s
-.PHONY : src/individual.cpp.s
-
-src/main.o: src/main.cpp.o
-
-.PHONY : src/main.o
+.PHONY : individual.o
 
 # target to build an object file
-src/main.cpp.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
+individual.cpp.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/individual.cpp.o
+.PHONY : individual.cpp.o
 
-src/main.i: src/main.cpp.i
+individual.i: individual.cpp.i
 
-.PHONY : src/main.i
+.PHONY : individual.i
 
 # target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
+individual.cpp.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/individual.cpp.i
+.PHONY : individual.cpp.i
 
-src/main.s: src/main.cpp.s
+individual.s: individual.cpp.s
 
-.PHONY : src/main.s
+.PHONY : individual.s
 
 # target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
+individual.cpp.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/individual.cpp.s
+.PHONY : individual.cpp.s
 
-src/population.o: src/population.cpp.o
+main.o: main.cpp.o
 
-.PHONY : src/population.o
+.PHONY : main.o
 
 # target to build an object file
-src/population.cpp.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/population.cpp.o
-.PHONY : src/population.cpp.o
+main.cpp.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/main.cpp.o
+.PHONY : main.cpp.o
 
-src/population.i: src/population.cpp.i
+main.i: main.cpp.i
 
-.PHONY : src/population.i
+.PHONY : main.i
 
 # target to preprocess a source file
-src/population.cpp.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/population.cpp.i
-.PHONY : src/population.cpp.i
+main.cpp.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-src/population.s: src/population.cpp.s
+main.s: main.cpp.s
 
-.PHONY : src/population.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-src/population.cpp.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/population.cpp.s
-.PHONY : src/population.cpp.s
+main.cpp.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/main.cpp.s
+.PHONY : main.cpp.s
+
+population.o: population.cpp.o
+
+.PHONY : population.o
+
+# target to build an object file
+population.cpp.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/population.cpp.o
+.PHONY : population.cpp.o
+
+population.i: population.cpp.i
+
+.PHONY : population.i
+
+# target to preprocess a source file
+population.cpp.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/population.cpp.i
+.PHONY : population.cpp.i
+
+population.s: population.cpp.s
+
+.PHONY : population.s
+
+# target to generate assembly for a file
+population.cpp.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/population.cpp.s
+.PHONY : population.cpp.s
 
 # Help Target
 help:
@@ -213,15 +213,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... edit_cache"
-	@echo "... src/individual.o"
-	@echo "... src/individual.i"
-	@echo "... src/individual.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
-	@echo "... src/population.o"
-	@echo "... src/population.i"
-	@echo "... src/population.s"
+	@echo "... individual.o"
+	@echo "... individual.i"
+	@echo "... individual.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
+	@echo "... population.o"
+	@echo "... population.i"
+	@echo "... population.s"
 .PHONY : help
 
 
