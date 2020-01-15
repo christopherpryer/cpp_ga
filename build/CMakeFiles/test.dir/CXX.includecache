@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/users/pryerc/dev/cpp_ga/src/individual.cpp
-individual.h
-/cygdrive/c/users/pryerc/dev/cpp_ga/src/individual.h
-
 /cygdrive/c/users/pryerc/dev/cpp_ga/src/individual.h
 random
 -
@@ -23,12 +19,6 @@ functional
 -
 iostream
 -
-
-/cygdrive/c/users/pryerc/dev/cpp_ga/src/main.cpp
-time.h
--
-population.h
-/cygdrive/c/users/pryerc/dev/cpp_ga/src/population.h
 
 /cygdrive/c/users/pryerc/dev/cpp_ga/src/population.cpp
 population.h
