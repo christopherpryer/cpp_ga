@@ -22,5 +22,5 @@ class Population {
         std::vector<int> selectUsingProbability(std::vector<int> sampleVector, std::vector<float> probabilityVector);
         std::vector<int> getReproductionVector(Individual i1, Individual i2);
         void overrideData(std::vector<Individual> newData);
-        void mutateNewborn(std::vector<int> newborn);
+        void mutateNewborn(std::vector<int> &newborn);
 };

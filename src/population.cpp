@@ -50,11 +50,10 @@ void Population::run(int n) {
             
             Individual child(iN);
             // example of inplace (in memory) operation
-            //this->mutateNewborn(reproductionVector);
+            this->mutateNewborn(reproductionVector);
             child.overrideData(reproductionVector);
             newGenerationVector.push_back(child);
             selectionCounter++;
-            // TODO: add mutation.
         }
         this->overrideData(newGenerationVector);
     }
@@ -138,11 +137,11 @@ std::vector<int> Population::getReproductionVector(Individual i1, Individual i2)
     return vec;
 };
 
-void Population::mutateNewborn(std::vector<int> newborn) {
+void Population::mutateNewborn(std::vector<int> &newborn) {
     unsigned int i = rand() % (newborn.size() - 1); // index to mutate (make this configurable).
     int maximum = *max_element(newborn.begin(), newborn.end());
     int mutation = rand() % (maximum);
-    newborn.at(0) = mutation;
+    newborn.at(i) = mutation;
 };
 
 void Population::overrideData(std::vector<Individual> newData) {
